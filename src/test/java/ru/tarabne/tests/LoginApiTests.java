@@ -74,7 +74,7 @@ public class LoginApiTests extends TestBase {
 
     @Test
     @DisplayName("Обновление пользователя целиком")
-    void fullUserUpdate() {
+    void fullUserUpdateTest() {
         String name = "morpheus111";
         String job = "zion resident111";
         Response response = given()
@@ -98,7 +98,7 @@ public class LoginApiTests extends TestBase {
 
     @Test
     @DisplayName("Частичное обновление пользователя")
-    void partialUserUpdate() {
+    void partialUserUpdateTest() {
         String job = "zion resident111";
         Response response = given()
                 .log().uri()
