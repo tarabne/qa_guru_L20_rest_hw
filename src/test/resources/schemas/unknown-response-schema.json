@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome3",
+  "definitions": {
+    "Welcome3": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "page": {
+          "type": "integer"
+        },
+        "per_page": {
+          "type": "integer"
+        },
+        "total": {
+          "type": "integer"
+        },
+        "total_pages": {
+          "type": "integer"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Datum"
+          }
+        },
+        "support": {
+          "$ref": "#/definitions/Support"
+        }
+      },
+      "required": [
+        "data",
+        "page",
+        "per_page",
+        "support",
+        "total",
+        "total_pages"
+      ],
+      "title": "Welcome3"
+    },
+    "Datum": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        },
+        "color": {
+          "type": "string"
+        },
+        "pantone_value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "color",
+        "id",
+        "name",
+        "pantone_value",
+        "year"
+      ],
+      "title": "Datum"
+    },
+    "Support": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "url"
+      ],
+      "title": "Support"
+    }
+  }
+}
